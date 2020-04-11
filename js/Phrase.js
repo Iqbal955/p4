@@ -4,14 +4,14 @@
 
 class Phrase {
 
-    constructor(phrase) {
+    constructor(chosenPhrase) {
 
-        this.phrase = phrase.toLowerCase();
-        console.log("test");
+        this.chosenPhrase = chosenPhrase.toLowerCase();
+        console.log(this.chosenPhrase)
 
 
     }
-
+    /** 
 
     addPhraseToDisplay() {
 
@@ -42,4 +42,49 @@ class Phrase {
 
     }
 
+    checkLetter() {
+
+        if (//does game represent the user input?  game.value === phrase.value
+        ) {
+
+
+        }
+
+    }
+
+
+
+    showMatchedLetter() {
+
+        toBeMatched = document.querySelectorAll(".phrase li");
+
+
+        game.forEach(userInput => {
+
+            if (game.className === toBeMatched) { //meaning that game = user input
+
+                userInput.setAttribute("class", "show");
+
+
+
+
+
+
+            }
+
+        }
+
+
+    }
+
+
+
+
+
+*/
+
+
 }
+
+
+
