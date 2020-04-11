@@ -1,46 +1,61 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
- * Game.js */
-class Game {
-
-    constructor() {
+ * app.js */
 
 
-        this.missed = 0;
-        this.possiblePhrases = ["ABC", "DEF", "GameTest", "NewGame", "Cannon"];
-        this.activePhrase = null;
-      
-    }
+/**
+ * Testing the new objects
+ * */
+//const phrase = new Phrase('Life is like a box of chocolates');
+//console.log(`Phrase - phrase: ${phrase.phrase}`);
 
 
-    getRandomPhrase() {
-
-     this.possiblePhrases[Math.floor(Math.random() * this.possiblePhrases.length)];
-     
-    }
-    /** 
-
-    startGame() {
-
-        const overLay = document.getElementById("overlay");
-        overLay.style.display = "none";
-      const activePhrase =  addPhraseToDisplay(getRandomPhrase());
+//const game = new Game();
+//game.possiblePhrases.forEach((possiblePhrases, index) => {
+  //  console.log(`Phrase ${index} - phrase: ${possiblePhrases}`);
+//});
 
 
-    }
+const getPhrases = (possiblePhrases) => {
+    console.log("Possible phrase" + possiblePhrases);
+}
+const game = new Game();
+getPhrases(game.getRandomPhrase);
+getPhrases(game.getRandomPhrase);
+getPhrases(game.getRandomPhrase);
 
 
 
-
-    handleInteraction() {
-
-        checkLetter()
-
-    }
+const phrase = new Phrase('Life is like a box of chocolates');
+console.log(`Phrase - phrase: ${phrase.phrase}`);
 
 
-  
-  */
+//const game = new Game();
+//game.possiblePhrases.forEach((possiblePhrases, index) => {
+ //console.log(`Phrase ${index} - phrase: ${possiblePhrases}`);
+//});
 
-    }
+
+//var nextPhrase = new Phrase(game.possiblePhrases[0]);
+//console.log(nextPhrase);
+
+
+game.getRandomPhrase();
+
+/** 
+const game;
+document.getElementById("btn_reset").addEventListener("click", function() {
+
+    game = new Game;
+    game.startGame();
+
+
+
+
+
+
+
+
+});
+*/
 
