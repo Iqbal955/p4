@@ -15,7 +15,7 @@ class Phrase {
 
     addPhraseToDisplay() {
 
-        var splitT = possiblePhrases.split(""); //Calling the split on the phrases
+        var splitT = this.chosenPhrase.split(""); //Calling the split on the phrases
 
         var letters = splitT.forEach(letter => {
 
