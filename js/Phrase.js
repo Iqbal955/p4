@@ -11,15 +11,15 @@ class Phrase {
 
 
     }
-    /** 
+    
 
     addPhraseToDisplay() {
 
-        var splitT = this.phrases.split(""); //Calling the split on the phrases
+        var splitT = possiblePhrases.split(""); //Calling the split on the phrases
 
         var letters = splitT.forEach(letter => {
 
-            if (letter.value == ! " ") {
+            if (letter.value ==! " ") {
                 var liLetter = '<li>' + letter + '</li>';
                 letter.setAttribute("class", "hide letter");
                 document.getElementById("phrase").firstElementChild(letter).appendChild(liLetter);
@@ -41,6 +41,7 @@ class Phrase {
         });
 
     }
+    /** 
 
     checkLetter() {
 
