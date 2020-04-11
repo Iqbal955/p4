@@ -19,8 +19,8 @@ class Game {
 
     getRandomPhrase() {
 
-    const abc = this.possiblePhrases[Math.floor(Math.random() * this.possiblePhrases.length)];
-        abc;
+ return this.possiblePhrases[Math.floor(Math.random() * this.possiblePhrases.length)];
+ 
     }
     /** 
 
