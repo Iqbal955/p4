@@ -7,7 +7,7 @@ class Game {
 
 
         this.missed = 0;
-        this.possiblePhrases = ["ABC", "DEF", "GameTest", "NewGame", "Cannon"];
+        this.possiblePhrases = ["ABC", "DEF", "Game Test", "New Game", "Can non"];
         this.activePhrase = null;
       
 
