@@ -12,27 +12,39 @@ class Phrase {
 
     }
     
+    /*
 
+Creating an element and appending its text content to li
+*/
+
+
+   
     addPhraseToDisplay() {
 
         var splitT = this.chosenPhrase.split(""); //Calling the split on the phrases
 
-        var letters = splitT.forEach(letter => {
+        var letters = splitT.forEach(letter => { //for each of the splitted letters
 
-            if (letter.value ==! " ") {
-                var liLetter = '<li>' + letter + '</li>';
-                letter.setAttribute("class", "hide letter");
-                document.getElementById("phrase").firstElementChild(letter).appendChild(liLetter);
+            if (letter.value !== " ") { //if the value is not an equal a space
+                var liLetter = document.createElement("li"); //creating the li element
+                liLetter.textContent = letter; //setting the text content generated from the split of the for each, that is the text content
+                //og the new LI is equal to the letter
+                liLetter.setAttribute("class", "hide letter"); //the newly created li is now the 
+                const appendToIDandUl = document.getElementById("phrase").firstElementChild; //appending from the phrase ID to its first child that is the ul
+                appendToIDandUl.appendChild(liLetter); //appending to the li
+
 
 
 
             }
 
-            else {
+            else if (letter.value === " ") { //if the value is an empty space
 
-                var liSpaces = '<li>' + letter + '</li>';
-                letter.setAttribute("class", "hide spaces");
-                document.getElementById("phrase").firstElementChild(letter).appendChild(liSpaces);
+                var liSpaces = document.createElement("li"); //create element
+                liSpaces.textContent = letter; //appending the content of the split to the newly created li 
+                liSpaces.setAttribute("class", "hide spaces"); //setting the li's class to hide spaces
+                const appendToIDandUl = document.getElementById("phrase").firstElementChild; //rooting from phrase to the ul
+                appendToIDandUl.appendChild(liSpaces); //appending the newly created li "liSpaces" to the ul
 
             }
 
