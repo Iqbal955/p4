@@ -18,8 +18,11 @@
 
 const game = new Game();
 const randomPhrase = game.getRandomPhrase();
-const phrase = new Phrase(randomPhrase.chosenPhrase);
+const phrase = new Phrase(randomPhrase);
 phrase.addPhraseToDisplay();
+phrase.addPhraseToDisplay();
+phrase.addPhraseToDisplay();
+
 
 
 
