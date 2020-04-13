@@ -42,11 +42,13 @@ class Game {
 
 
     handleInteraction(e) {
+        console.log("click");
+        const qwerty = document.getElementById("qwerty");
+        for (var i = 0; i < qwerty.length; i++) {
 
-     
-        var key = e.key;
-      console.log(key);
-
+            var eQ = e.qwerty[i];
+            console.log(eQ);
+        }
     }
 
 
