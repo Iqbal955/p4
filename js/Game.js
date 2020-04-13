@@ -41,9 +41,11 @@ class Game {
     
 
 
-    handleInteraction() {
+    handleInteraction(e) {
 
-        checkLetter();
+     
+        var key = e.key;
+      console.log(key);
 
     }
 
