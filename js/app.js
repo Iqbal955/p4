@@ -25,6 +25,35 @@ phrase.addPhraseToDisplay();
 
 
 
+/*const game = new Game(); Testing the StartGame function
+game.startGame();
+console.log(`Active Phrase - phrase: ${game.activePhrase.possiblePhrases}`);
+*/
+
+
+
+//const game;
+document.getElementById('btn__reset').addEventListener("click",function()  {
+
+   const game = new Game();
+    game.startGame();
+
+
+
+
+
+});
+
+
+
+//adding the event listener for the buttons
+
+document.addEventListener("click", function (e) {
+
+    e.handleInteraction();
+
+
+});
 
 /*
 const getPhrases = (possiblePhrases) => {
