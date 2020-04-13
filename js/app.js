@@ -50,7 +50,7 @@ document.getElementById('btn__reset').addEventListener("click",function()  {
 
 document.addEventListener("click", function (e) {
 
-    e.handleInteraction();
+    game.handleInteraction(e);
 
 
 });
