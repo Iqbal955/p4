@@ -55,7 +55,7 @@ Creating an element and appending its text content to li
     }
     
 
-    checkLetter() {
+    checkLetter(e) {
         console.log("click");
         
       
