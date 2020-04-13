@@ -25,7 +25,7 @@ Creating an element and appending its text content to li
 
         var letters = splitT.forEach(letter => { //for each of the splitted letters
 
-            if (letter.value !== " ") { //if the value is not an equal a space
+            if (letter !== " ") { //if the value is not an equal a space
                 var liLetter = document.createElement("li"); //creating the li element
                 liLetter.textContent = letter; //setting the text content generated from the split of the for each, that is the text content
                 //og the new LI is equal to the letter
@@ -38,11 +38,11 @@ Creating an element and appending its text content to li
 
             }
 
-            else if (letter.value === " ") { //if the value is an empty space
+            else if (letter === " ") { //if the string is an empty space, note dont get the .value since .value doesnt work on strings
 
                 var liSpaces = document.createElement("li"); //create element
                 liSpaces.textContent = letter; //appending the content of the split to the newly created li 
-                liSpaces.setAttribute("class", "hide spaces"); //setting the li's class to hide spaces
+                liSpaces.setAttribute("class", "hide space"); //setting the li's class to hide spaces
                 const appendToIDandUl = document.getElementById("phrase").firstElementChild; //rooting from phrase to the ul
                 appendToIDandUl.appendChild(liSpaces); //appending the newly created li "liSpaces" to the ul
 
@@ -53,19 +53,16 @@ Creating an element and appending its text content to li
         });
 
     }
-    /** 
+    
 
     checkLetter() {
-
-        if (//does game represent the user input?  game.value === phrase.value
-        ) {
-
-
-        }
+        console.log("click");
+        
+      
 
     }
 
-
+    /*
 
     showMatchedLetter() {
 
@@ -85,7 +82,7 @@ Creating an element and appending its text content to li
 
             }
 
-        }
+        });
 
 
     }
