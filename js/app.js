@@ -37,6 +37,7 @@ document.getElementById('btn__reset').addEventListener("click",function()  {
 
    const game = new Game();
     game.startGame();
+   
 
 
 
@@ -48,12 +49,7 @@ document.getElementById('btn__reset').addEventListener("click",function()  {
 
 //adding the event listener for the buttons
 
-document.addEventListener("click", function (e) {
 
-    game.handleInteraction(e);
-
-
-});
 
 /*
 const getPhrases = (possiblePhrases) => {
