@@ -57,28 +57,28 @@ Creating an element and appending its text content to li
 
     checkLetter(letter) {
 
-        var splitT = this.chosenPhrase.split(""); //Calling the split on the phrases
+        const checkLetter = this.chosenPhrase;
+        return checkLetter.includes(letter);
+                /*
+
+                if (splitT.includes(target));
+                {
+                    showMatchedLetter(letter);
+
+                }
+                */
+
+            }
 
 
-        document.addEventListener("click", (e) => { //adding the event listener (should this be on the game object?)
-
-            const target = e.target; //e.target = target
-            splitT.forEach(letter => { //for each letter
-
-               return splitT.includes(target); //checks if splitT includes target
+        }
 
 
-            });
-                
 
-        });
+
 
     
 
-
-
-
-}
 
 
     /*
@@ -111,7 +111,6 @@ Creating an element and appending its text content to li
 
 
 */
-
 
 
 
