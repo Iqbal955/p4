@@ -11,14 +11,14 @@ class Phrase {
 
 
     }
-    
+
     /*
 
 Creating an element and appending its text content to li
 */
 
 
-   
+
     addPhraseToDisplay() {
 
         var splitT = this.chosenPhrase.split(""); //Calling the split on the phrases
@@ -53,14 +53,33 @@ Creating an element and appending its text content to li
         });
 
     }
+
+
+    checkLetter(letter) {
+
+        var splitT = this.chosenPhrase.split(""); //Calling the split on the phrases
+
+
+        document.addEventListener("click", (e) => {
+
+            const target = e.target;
+            splitT.forEach(letter => {
+
+               return splitT.includes(target);
+
+
+            });
+                
+
+        });
+
     
 
-    checkLetter(e) {
-        console.log("click");
-        
-      
 
-    }
+
+
+}
+
 
     /*
 
@@ -94,7 +113,7 @@ Creating an element and appending its text content to li
 */
 
 
-}
+
 
 
 
