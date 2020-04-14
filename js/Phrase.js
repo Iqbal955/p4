@@ -60,12 +60,12 @@ Creating an element and appending its text content to li
         var splitT = this.chosenPhrase.split(""); //Calling the split on the phrases
 
 
-        document.addEventListener("click", (e) => {
+        document.addEventListener("click", (e) => { //adding the event listener (should this be on the game object?)
 
-            const target = e.target;
-            splitT.forEach(letter => {
+            const target = e.target; //e.target = target
+            splitT.forEach(letter => { //for each letter
 
-               return splitT.includes(target);
+               return splitT.includes(target); //checks if splitT includes target
 
 
             });
