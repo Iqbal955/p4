@@ -9,7 +9,7 @@ class Game {
         this.missed = 0;
         this.possiblePhrases = ["ABC", "DEF", "Game Test", "New Game", "Can non"];
         this.activePhrase = null;
-      
+
 
 
 
@@ -19,41 +19,34 @@ class Game {
 
     getRandomPhrase() {
 
- return this.possiblePhrases[Math.floor(Math.random() * this.possiblePhrases.length)];
- 
+        return this.possiblePhrases[Math.floor(Math.random() * this.possiblePhrases.length)];
+
     }
-    
+
 
     startGame() {
 
-        const overLay = document.getElementById("overlay"); 
+        const overLay = document.getElementById("overlay");
         overLay.style.display = "none";
 
         this.activePhrase = this.getRandomPhrase(); //Setting the this.getRandomPhrase to the varibale
 
-      /*  
-        const addRandomPhraseToDisplay = addPhraseToDisplay(getRandomPhrase); //creating a nested function //Error here addPhraseToDisplay is not defined
-        this.activePhrase.addRandomPhraseToDisplay; //setting the activePhraseParameter to the addRandomPhrase
-        */
+        /*  
+          const addRandomPhraseToDisplay = addPhraseToDisplay(getRandomPhrase); //creating a nested function //Error here addPhraseToDisplay is not defined
+          this.activePhrase.addRandomPhraseToDisplay; //setting the activePhraseParameter to the addRandomPhrase
+          */
 
     }
 
+  
     
 
 
-    handleInteraction(e) {
-        console.log("click");
-        const qwerty = document.getElementById("qwerty");
-        for (var i = 0; i < qwerty.length; i++) {
 
-            var eQ = e.qwerty[i];
-            console.log(eQ);
-        }
-    }
+}
+
 
 
   
  
-
-    }
 
