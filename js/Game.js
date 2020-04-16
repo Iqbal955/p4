@@ -3,50 +3,43 @@
  * Game.js */
 class Game {
 
-    constructor() {
-
-
+   
+    constructor(missed, phrases, activePhrase) {
         this.missed = 0;
-        this.possiblePhrases = ["ABC", "DEF", "Game Test", "New Game", "Can non"];
+        this.phrases = ["Grateful", "Happy and Joy", "Positivity"];
         this.activePhrase = null;
 
 
 
+    }
+    createPhrases() {
 
 
     }
 
+    
+    startGame() {
+
+    }
+
+    keyboardClick() {
+
+
+    }
 
     getRandomPhrase() {
 
-        return this.possiblePhrases[Math.floor(Math.random() * this.possiblePhrases.length)];
+    }
+
+    checkforWin() {
+
+
 
     }
 
+    removeLife() {
 
-    startGame() {
-
-        const overLay = document.getElementById("overlay");
-        overLay.style.display = "none";
-
-        this.activePhrase = this.getRandomPhrase(); //Setting the this.getRandomPhrase to the varibale
-
-        /*  
-          const addRandomPhraseToDisplay = addPhraseToDisplay(getRandomPhrase); //creating a nested function //Error here addPhraseToDisplay is not defined
-          this.activePhrase.addRandomPhraseToDisplay; //setting the activePhraseParameter to the addRandomPhrase
-          */
 
     }
-
-  
-    
-
-
 
 }
-
-
-
-  
- 
-
