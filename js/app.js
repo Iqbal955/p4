@@ -3,41 +3,10 @@
  * app.js */
 
 
-/**
- * Testing the new objects
- * */
-//const phrase = new Phrase('Life is like a box of chocolates');
-//console.log(`Phrase - phrase: ${phrase.phrase}`);
 
-
-//const game = new Game();
-//game.possiblePhrases.forEach((possiblePhrases, index) => {
-  //  console.log(`Phrase ${index} - phrase: ${possiblePhrases}`);
-//});
-
-
-const game = new Game();
-const randomPhrase = game.getRandomPhrase();
-const phrase = new Phrase(randomPhrase);
-phrase.addPhraseToDisplay();
-phrase.addPhraseToDisplay();
-phrase.addPhraseToDisplay();
-
-
-
-/*const game = new Game(); Testing the StartGame function
-game.startGame();
-console.log(`Active Phrase - phrase: ${game.activePhrase.possiblePhrases}`);
-*/
-
-
-
-//const game;
-document.getElementById('btn__reset').addEventListener("click",function()  {
-
-   const game = new Game();
-    game.startGame();
-   
+//Reset button event listener
+const reset = document.getElementById("btn__reset");
+reset.addEventListener("click", e => {
 
 
 
@@ -46,52 +15,19 @@ document.getElementById('btn__reset').addEventListener("click",function()  {
 });
 
 
-
-//adding the event listener for the buttons
-
-
-
-/*
-const getPhrases = (possiblePhrases) => {
-    console.log("Possible phrase " + possiblePhrases);
-    }
-    const game = new Game();
-    getPhrases(game.getRandomPhrase());
-    getPhrases(game.getRandomPhrase());
-    getPhrases(game.getRandomPhrase());
+//Keyboard eventlistener
+const lettersonKeyboard = document.getElementById("qwerty").addEventListener("click", (e) => {
 
 
 
-    //const phrase = new Phrase('Life is like a box of chocolates');
-    //console.log(`Phrase - phrase: ${phrase.phrase}`);
 
 
-    //const game = new Game();
-    //game.possiblePhrases.forEach((possiblePhrases, index) => {
-    //console.log(`Phrase ${index} - phrase: ${possiblePhrases}`);
-    //});
+});
 
+const phrase = new Phrase('Life is like a box of chocolates');
+console.log(`Phrase - phrase: ${phrase.actualPhrase}`);
 
-    //var nextPhrase = new Phrase(game.possiblePhrases[0]);
-    //console.log(nextPhrase);
-
-
-    //game.getRandomPhrase();
-
-    /** 
-    const game;
-    document.getElementById("btn_reset").addEventListener("click", function() {
-    
-        game = new Game;
-        game.startGame();
-    
-    
-    
-    
-    
-    
-    
-    
-    });
-    
-}*/
+const game = new Game();
+game.phrases.forEach((phrase, index) => {
+    console.log(`Phrase ${index} - phrase: ${phrase.actualPhrase}`);
+});
