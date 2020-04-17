@@ -29,5 +29,5 @@ console.log(`Phrase - phrase: ${phrase.actualPhrase}`);
 
 const game = new Game();
 game.phrases.forEach((phrase, index) => {
-    console.log(`Phrase ${index} - phrase: ${phrase}`);
+    console.log(`Phrase ${index} - phrase: ${phrase.actualPhrase}`);
 });
