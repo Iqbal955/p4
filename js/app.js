@@ -1,59 +1,33 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
- * Game.js */
-class Game {
+ * app.js */
 
-   
-    constructor(missed, phrases, activePhrase) {
-        this.missed = 0;
-        this.phrases = [
 
-            { phrase: "High Vibes" },
-            { phrase: "Joy" },
-            { phrase: "Gratitude and Happiness" }
+
+//Reset button event listener
+const reset = document.getElementById("btn__reset");
+reset.addEventListener("click", e => {
 
 
 
 
 
-
-        ];
-            
-            
-        
-        this.activePhrase = null;
+});
 
 
-
-    }
-    createPhrases() {
-
-
-    }
-
-    
-    startGame() {
-
-    }
-
-    keyboardClick() {
-
-
-    }
-
-    getRandomPhrase() {
-
-    }
-
-    checkforWin() {
+//Keyboard eventlistener
+const lettersonKeyboard = document.getElementById("qwerty").addEventListener("click", (e) => {
 
 
 
-    }
-
-    removeLife() {
 
 
-    }
+});
 
-}
+const phrase = new Phrase('Life is like a box of chocolates');
+console.log(`Phrase - phrase: ${phrase.actualPhrase}`);
+
+const game = new Game();
+game.phrases.forEach((phrase, index) => {
+    console.log(`Phrase ${index} - phrase: ${phrase}`);
+});
