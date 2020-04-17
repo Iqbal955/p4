@@ -6,7 +6,21 @@ class Game {
    
     constructor(missed, phrases, activePhrase) {
         this.missed = 0;
-        this.phrases = ["Grateful", "Happy and Joy", "Positivity"];
+        this.phrases = [
+
+            { phrase: "High Vibes" },
+            { phrase: "Joy" },
+            { phrase: "Gratitude and Happiness" }
+
+
+
+
+
+
+        ];
+            
+            
+        
         this.activePhrase = null;
 
 
