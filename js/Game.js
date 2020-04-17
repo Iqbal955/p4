@@ -8,14 +8,8 @@ class Game {
         this.missed = 0;
         this.phrases = [
 
-            { phrase: "High Vibes" },
-            { phrase: "Joy" },
-            { phrase: "Gratitude and Happiness" }
-
-
-
-
-
+            new Phrase("Happiness"),
+            new Phrase("Joy")
 
         ];
             
