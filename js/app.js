@@ -2,12 +2,14 @@
  * Project 4 - OOP Game App
  * app.js */
 
-
+var game;
 
 //Reset button event listener
 const reset = document.getElementById("btn__reset");
 reset.addEventListener("click", e => {
 
+    game = new Game();
+    game.startGame();
 
 
 
@@ -21,13 +23,9 @@ const lettersonKeyboard = document.getElementById("qwerty").addEventListener("cl
 
 
 
-
 });
 
-const phrase = new Phrase('Life is like a box of chocolates');
-console.log(`Phrase - phrase: ${phrase.actualPhrase}`);
 
-const game = new Game();
-game.phrases.forEach((phrase, index) => {
-    console.log(`Phrase ${index} - phrase: ${phrase.actualPhrase}`);
-});
+
+
+
