@@ -77,7 +77,20 @@ class Phrase {
 
 
 
-}
+    checkForWin() {
+
+       return this.actualPhrase.filter(phrase => phrase.className = "show");
+
+        
+
+        }
+
+       
+
+
+    }
+
+
 
 
 
