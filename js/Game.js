@@ -68,16 +68,40 @@ easily accessed throughout the game.
         return randomPhrase;
     }
 
-    checkforWin() {
+    checkForWin() {
 
-
-
-    }
-
-    removeLife() {
+     return  phrase.actualPhrase.filter(phrase => phrase.className = "show");
 
 
     }
 
 }
 
+     /*
+
+    removeLife() {
+
+       
+        const scoreBoard = document.getElementById("scoreboard");
+
+        for (var i = 0; i < scoreBoard.length; i++) {
+
+            this.missed + 1;
+
+            scoreBoard[i].src = "lostHeart.png";
+        }
+
+        if (this.missed > 5) {
+
+
+            gameOver()
+
+        }
+        }
+
+
+    }
+
+}
+
+*/
