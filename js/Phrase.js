@@ -46,13 +46,15 @@ class Phrase {
     }
 
 
-    checkLetter(letter) {
+    checkLetter(letter)
+    {
         return this.actualPhrase.includes(letter);
 
     }
+    
 
-
-    showMatchedLetter(letter) {
+    showMatchedLetter(letter)
+    {
 
         const allLetters = document.querySelectorAll(".letter");
 
@@ -70,23 +72,17 @@ class Phrase {
 
 
         });
+     
 
 
-
-    }
-
-
-
-
-       
+        }
+        
 
 
     }
 
 
-
-
-
+    
 
 
 
