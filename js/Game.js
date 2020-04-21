@@ -3,24 +3,24 @@
  * Game.js */
 class Game {
 
-
+   
     constructor(missed, phrases, activePhrase) {
         this.missed = 0;
         this.phrases = [
-
+            
             new Phrase("Ha ppi ness"),
-
+         
             new Phrase("Jo y"),
 
             new Phrase("High Vibe s"),
 
             new Phrase("blEsSings")
         ];
+            
 
 
 
-
-
+        
         this.activePhrase = null;
 
 
@@ -31,16 +31,16 @@ class Game {
 
     }
 
-
+    
     startGame() {
 
         /*
 
 The`startGame()` method hides the start screen overlay(the`div` element with an`id` of
     `overlay`), calls the`getRandomPhrase()` method to select a Phrase object from the Game
-object’s array of phrases, and then adds the phrase to the gameboard by calling the
+objectâ€™s array of phrases, and then adds the phrase to the gameboard by calling the
     `addPhraseToDisplay()` method(which is a method on the Phrase class) on the selected Phrase
-object.The selected phrase should be stored in the Game’s`activePhrase` property, so it can be
+object.The selected phrase should be stored in the Gameâ€™s`activePhrase` property, so it can be
 easily accessed throughout the game.
 
 */
@@ -64,44 +64,43 @@ easily accessed throughout the game.
     getRandomPhrase() {
 
 
-        var randomPhrase = this.phrases[Math.floor(Math.random() * this.phrases.length)];
+       var randomPhrase = this.phrases[Math.floor(Math.random() * this.phrases.length)];
         return randomPhrase;
     }
 
-    checkForWin() {
+    checkforWin() {
 
-     return  phrase.actualPhrase.filter(phrase => phrase.className = "show");
+        var allLetters = document.getElementsByClassName(".letters");
+
+        console.log(allLetters);
+
+        for (var i = 0; i < allLetters.length; i++) {
+
+            if (allLetters[i].className === "show") {
+
+                return true;
+                console.log("true");
+
+            }
+
+            else {
+
+                return false;
+                console.log("false");   
+
+
+            }
+
+
+        }
+
 
 
     }
-
-}
-
-     /*
 
     removeLife() {
 
-       
-        const scoreBoard = document.getElementById("scoreboard");
-
-        for (var i = 0; i < scoreBoard.length; i++) {
-
-            this.missed + 1;
-
-            scoreBoard[i].src = "lostHeart.png";
-        }
-
-        if (this.missed > 5) {
-
-
-            gameOver()
-
-        }
-        }
-
 
     }
 
 }
-
-*/
