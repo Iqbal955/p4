@@ -68,7 +68,7 @@ easily accessed throughout the game.
         return randomPhrase;
     }
 
-    checkforWin() {
+    checkForWin() {
 
         var allLetters = document.getElementsByClassName("letter");
 
