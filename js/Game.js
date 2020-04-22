@@ -70,23 +70,23 @@ easily accessed throughout the game.
 
     checkforWin() {
 
-        var allLetters = document.getElementsByClassName(".letters");
+        var allLetters = document.getElementsByClassName("letter");
 
         console.log(allLetters);
 
-        for (var i = 0; i < allLetters.length; i++) {
+      for (var i = 0; i < allLetters.length; i++) {
 
-            if (allLetters[i].className === "show") {
+        if (allLetters[i].className.includes("show")) {
 
-                return true;
-                console.log("true");
-
+         
+                
+            return true;
             }
 
             else {
-
+       
                 return false;
-                console.log("false");   
+                 
 
 
             }
@@ -98,9 +98,69 @@ easily accessed throughout the game.
 
     }
 
-    removeLife() {
 
+    /**
+* Increases the value of the missed property
+* Removes a life from the scoreboard
+* Checks if player has remaining lives and ends game if player is out
+*/
+    
+
+    removeLife(gameOver) {
+        var scoreboard = document.querySelectorAll("img");
+        console.log(scoreboard);
+        if (scoreboard[this.missed].src = "images/liveHeart.png") {
+
+            scoreboard[this.missed].src = "images/lostHeart.png";
+
+
+
+
+            this.missed += 1;
+
+
+            if (this.missed >= 5) {
+           
+                gameOver.gameWon(false);
+                
+
+            }
+
+        }
+
+       
+       
 
     }
 
-}
+
+    gameOver(gameWon) {
+        var gameMsg = document.getElementById("game-over-message");
+        var overlay = document.getElementById("overlay");
+        var gameWon = document.querySelector(".won");
+        var gameTryAgain = document.querySelector(".lose");
+        var start = document.querySelector(".start");
+        overlay.style.display = "block";
+
+        if (gameWon) {
+
+            gameMsg.innerHTML = "Game Won";
+            overlay.classList.replace(start, gameWon);
+
+
+        }
+
+        else {
+
+            gameMsg.innerHTML = "Try Again"
+            overlay.classList.replace(start, gameTryAgain);
+
+        }
+
+
+
+        }
+        
+
+
+    }
