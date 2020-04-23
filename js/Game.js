@@ -74,22 +74,44 @@ easily accessed throughout the game.
 
         console.log(allLetters);
 
-      for (var i = 0; i < allLetters.length; i++) {
+        for (var i = 0; i < allLetters.length; i++) {
 
-        if (allLetters[i].className.includes("show")) {
+            if (allLetters[i].className.includes("show")) {
 
-         
-                
-            return true;
+                console.log("game won");
+
+                return true;
+
+            }
+
+
+            else {
+
+                return false;
+
+
+
+            }
+
+            /*
+                     allLetters.forEach(letter => {
+            if (letter.className.includes("show")) {
+
+
+                return true;
             }
 
             else {
-       
+
+
                 return false;
-                 
 
 
             }
+
+        });
+        */
+         
 
 
         }
@@ -105,7 +127,7 @@ easily accessed throughout the game.
 * Checks if player has remaining lives and ends game if player is out
 */
     
-
+    
     removeLife(gameOver) {
         var scoreboard = document.querySelectorAll("img");
         console.log(scoreboard);
@@ -121,7 +143,7 @@ easily accessed throughout the game.
 
             if (this.missed >= 5) {
            
-                gameOver.gameWon(false);
+             //   gameOver.gameWon(false);
                 
 
             }
