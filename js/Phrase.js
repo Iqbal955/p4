@@ -35,6 +35,7 @@ class Phrase {
                 liSpace.textContent = letter;
                 liSpace.setAttribute("class", "space");
                 phraseID.firstElementChild.appendChild(liSpace);
+                
 
 
 
