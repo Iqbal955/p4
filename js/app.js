@@ -30,7 +30,12 @@ the gameboard to display the`liveHeart.png` image.
         qwerty[i].disabled = "false";
     }
 
-  
+        //setting the scoreboard to the regular heart back again
+        var scoreboard = document.querySelectorAll("img");
+    for (var i = 0; scoreboard.length; i++) {
+
+            scoreboard[i].src = "images/liveHeart.png";
+}
 
     //removing the li elements by looping through the phrase dom elements, getting the firstElementChild (ul). 
     //removing the child of it(with the phrase[i])
@@ -38,6 +43,12 @@ the gameboard to display the`liveHeart.png` image.
     for (var i = 0; i < phrase.Length; i++) {
 
         phrase.firstElementChild.removeChild(phrase.firstElementChild.childNodes[i]);
+
+
+
+
+
+
 
     }
 
