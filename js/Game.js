@@ -3,24 +3,24 @@
  * Game.js */
 class Game {
 
-   
+
     constructor(missed, phrases, activePhrase) {
         this.missed = 0;
         this.phrases = [
-            
+
             new Phrase("Ha ppi ness"),
-         
+
             new Phrase("Jo y"),
 
             new Phrase("High Vibe s"),
 
             new Phrase("blEsSings")
         ];
-            
 
 
 
-        
+
+
         this.activePhrase = null;
 
 
@@ -31,7 +31,7 @@ class Game {
 
     }
 
-    
+
     startGame() {
 
         /*
@@ -64,70 +64,59 @@ easily accessed throughout the game.
     getRandomPhrase() {
 
 
-       var randomPhrase = this.phrases[Math.floor(Math.random() * this.phrases.length)];
+        var randomPhrase = this.phrases[Math.floor(Math.random() * this.phrases.length)];
         return randomPhrase;
     }
 
     checkForWin() {
 
         var allLetters = document.getElementsByClassName("letter");
+        var hideletter = document.querySelectorAll('li[class~="hide"]');
+        console.log(hideletter);
 
-        console.log(allLetters);
+        if (hideletter.length === 0) {
+            return true;
+        }
+        else {
+            return false;
 
-        for (var i = 0; i < allLetters.length; i++) {
+        }
 
-            if (allLetters[i].className.includes("show")) {
-
-                console.log("game won");
-
-                return true;
-
-            }
-
-
-            else {
-
-                return false;
+        /*
+                 allLetters.forEach(letter => {
+        if (letter.className.includes("show")) {
 
 
+            return true;
+        }
 
-            }
-
-            /*
-                     allLetters.forEach(letter => {
-            if (letter.className.includes("show")) {
+        else {
 
 
-                return true;
-            }
-
-            else {
-
-
-                return false;
-
-
-            }
-
-        });
-        */
-         
+            return false;
 
 
         }
+
+    });
+    */
 
 
 
     }
 
 
+
+
+
     /**
-* Increases the value of the missed property
-* Removes a life from the scoreboard
-* Checks if player has remaining lives and ends game if player is out
-*/
     
-    
+  * Increases the value of the missed property
+  * Removes a life from the scoreboard
+  * Checks if player has remaining lives and ends game if player is out
+  
+      */
+
     removeLife(gameOver) {
         var scoreboard = document.querySelectorAll("img");
         console.log(scoreboard);
@@ -142,47 +131,80 @@ easily accessed throughout the game.
 
 
             if (this.missed >= 5) {
-           
-             //   gameOver.gameWon(false);
-                
+
+                game.gameOver(false);
+
 
             }
 
         }
 
-       
-       
+
+
 
     }
+
 
 
     gameOver(gameWon) {
-        var gameMsg = document.getElementById("game-over-message");
-        var overlay = document.getElementById("overlay");
-        var gameWon = document.querySelector(".won");
-        var gameTryAgain = document.querySelector(".lose");
-        var start = document.querySelector(".start");
-        overlay.style.display = "block";
+        // Select 'h1#game-over-message'
+        const gameOver = document.querySelector('h1#game-over-message');
 
-        if (gameWon) {
+        // Select 'h2.title'
+        const title = document.querySelector('h2.title');
 
-            gameMsg.innerHTML = "Game Won";
-            overlay.classList.replace(start, gameWon);
+        // Select 'div#overlay"
+        const divOverlay = document.querySelector('div#overlay');
+
+        // Condition check, if 'gameWon' parameter = true, 
+        if (gameWon === true) {
+            gameOver.innerHTML = 'You win! Well done!';
+            gameOver.style.display = 'block';
+            gameOver.style.justifyContent = 'center';
+            divOverlay.style.display = 'block';
+            divOverlay.setAttribute('class', 'win');
+            title.classList.remove('slide-in'); //removes slide animation 
+
+        } else {
+            gameOver.innerHTML = 'Sorry, better luck next time!';
+            gameOver.style.display = 'block';
+            gameOver.style.justifyContent = 'center';
+            divOverlay.style.display = 'block';
+            divOverlay.setAttribute('class', 'lose');
+            title.classList.remove('slide-in'); //removes slide animation
+        };
+
+ 
+    };
 
 
+    handleInteraction(button) {
+        // Store 'button's' inner HTML value in variable
+        let chosenLetter = button.innerHTML;
+
+        // Check condition: If checkLetter() method returns true (chosen letter = letter in phrase),
+        if (this.activePhrase.checkLetter(chosenLetter)) {
+            // Disable keyboard button, add class 'chosen' and display matching letter
+            button.disabled = true;
+            button.className = 'chosen';
+            this.activePhrase.showMatchedLetter(chosenLetter);
+
+            // Check condition: If checkForWin() method returns true (game is won),
+            if (this.checkForWin()) {
+                this.gameOver(true);
+            };
+
+            // Else, if false (chosen letter doesn't match letter in phrase)
         }
-
         else {
+            // Add 'wrong' class, disable keyboard button and call removeLife() method
+            button.className = 'wrong';
+            if (button.className === 'wrong') {
+                button.disabled = true;
+            };
+            this.removeLife();
+        };
+    };
 
-            gameMsg.innerHTML = "Try Again"
-            overlay.classList.replace(start, gameTryAgain);
-
-        }
-
-
-
-        }
-        
-
-
-    }
+    
+};
