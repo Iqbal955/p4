@@ -25,17 +25,25 @@ the gameboard to display the`liveHeart.png` image.
 
     //setting the class of the qwerty to key
     for (var i = 0; i < qwerty.length; i++) {
-        console.log(qwerty[i]);
-        qwerty[i].setAttribute("class", "key");
+      
+        qwerty[i].classList.add("key");
+        qwerty[i].classList.remove("wrong");
+        qwerty[i].classList.remove("chosen");
         qwerty[i].disabled = "false";
+        console.log(qwerty[i]);
     }
 
         //setting the scoreboard to the regular heart back again
-        var scoreboard = document.querySelectorAll("img");
-    for (var i = 0; scoreboard.length; i++) {
 
-            scoreboard[i].src = "images/liveHeart.png";
-}
+
+    //removing the li elements by looping through the phrase dom elements, getting the firstElementChild (ul). 
+    //removing the child of it(with the phrase[i])
+    //setting the scoreboard to the regular heart back again
+    var scoreboard = document.querySelectorAll("img");
+    scoreboard.forEach((heart) => (heart.src = "images/liveHeart.png"));
+
+ 
+   
 
     //removing the li elements by looping through the phrase dom elements, getting the firstElementChild (ul). 
     //removing the child of it(with the phrase[i])
