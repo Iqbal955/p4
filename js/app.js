@@ -20,18 +20,15 @@ the gameboard to display the`liveHeart.png` image.
 
 
 */
-    const qwerty = document.querySelectorAll(".keyrow");
+    const wrong = document.getElementsByClassName("wrong");
+    const chosen = document.getElementsByClassName("chosen");
 
+    wrong.forEach(letter => letter.classList.remove());
+    chosen.forEach(letter => letter.classList.remove());
 
-    //setting the class of the qwerty to key
-    for (var i = 0; i < qwerty.length; i++) {
-      
-        qwerty[i].classList.add("key");
-        qwerty[i].classList.remove("wrong");
-        qwerty[i].classList.remove("chosen");
-        qwerty[i].disabled = "false";
-        console.log(qwerty[i]);
-    }
+  
+
+  
 
         //setting the scoreboard to the regular heart back again
 
