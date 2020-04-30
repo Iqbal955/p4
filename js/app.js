@@ -20,11 +20,42 @@ the gameboard to display the`liveHeart.png` image.
 
 
 */
-    const wrong = document.getElementsByClassName("wrong");
-    const chosen = document.getElementsByClassName("chosen");
 
-    wrong.forEach(letter => letter.classList.remove());
-    chosen.forEach(letter => letter.classList.remove());
+
+    var wrong = document.getElementsByClassName("wrong");
+    var chosen = document.getElementsByClassName("chosen");
+
+
+    var buttons = document.querySelectorAll("button");
+    buttons.forEach(button => button.disabled = false);
+
+
+    
+
+   
+
+
+
+    for (var i = 0; i < wrong.length; i++) {
+
+        wrong[i].classList.remove("wrong");
+      
+ 
+    }
+
+    for (var i = 0; i < chosen.length; i++) {
+
+        chosen[i].classList.remove("chosen");
+
+
+
+
+    }
+
+
+
+
+
 
   
 
@@ -44,19 +75,17 @@ the gameboard to display the`liveHeart.png` image.
 
     //removing the li elements by looping through the phrase dom elements, getting the firstElementChild (ul). 
     //removing the child of it(with the phrase[i])
-    var phrase = document.getElementById("phrase");
-    for (var i = 0; i < phrase.Length; i++) {
+    var phraseButtons = document.getElementById("phrase").firstElementChild.childNodes;
+    console.log(phraseButtons);
+    for (var i = 0; i < phraseButtons.length; i++) {
 
-        phrase.firstElementChild.removeChild(phrase.firstElementChild.childNodes[i]);
-
-
-
-
-
+        phraseButtons[i].remove(phraseButtons[i]);
 
 
     }
 
+    var letters = document.getElementById("phrase").firstElementChild.childNodes;
+});
 
     //Keyboard eventlistener
     const lettersonKeyboard = document.getElementById("qwerty").addEventListener("click", (e) => {
@@ -84,4 +113,4 @@ the gameboard to display the`liveHeart.png` image.
 
 
 
-});
+
