@@ -8,8 +8,7 @@ var game;
 const reset = document.getElementById("btn__reset");
 reset.addEventListener("click", e => {
 
-    game = new Game();
-    game.startGame();
+
 
     /*
     Remove all`li` elements from the Phrase`ul` element.
@@ -21,41 +20,35 @@ the gameboard to display the`liveHeart.png` image.
 
 */
 
+    game = new Game();
 
-    var wrong = document.getElementsByClassName("wrong");
-    var chosen = document.getElementsByClassName("chosen");
-
-
-    var buttons = document.querySelectorAll("button");
-    buttons.forEach(button => button.disabled = false);
+    if (game.gameOver(game)) {
 
 
-    
-
-   
-
-
-
-    for (var i = 0; i < wrong.length; i++) {
-
-        wrong[i].classList.remove("wrong");
-      
  
+        var buttons = document.querySelectorAll("button");
+        buttons.forEach(button => button.disabled = false);
+
+
+        var wrong = document.getElementsByClassName("wrong");
+        for (var i = 0; i < wrong.length; i++)
+        {
+           wrong[i].classList.remove("wrong");
+        }
+
+
+
+        var chosen = document.getElementsByClassName("chosen");
+        for (var i = 0; i < chosen.length; i++)
+        {
+            chosen[i].classList.remove("chosen");
+        }
+
     }
 
-    for (var i = 0; i < chosen.length; i++) {
-
-        chosen[i].classList.remove("chosen");
 
 
-
-
-    }
-
-
-
-
-
+    game.startGame();
 
   
 
