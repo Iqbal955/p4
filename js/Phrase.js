@@ -16,12 +16,17 @@ class Phrase {
         var splitPhrase = this.actualPhrase.split("");
         splitPhrase.forEach(letter => {
 
+            var ul = document.createElement("ul");
+            var liLetter = document.createElement("li");
+            ul.appendChild(liLetter);
+            phraseID.firstElementChild.appendChild(liLetter);
+            liLetter.textContent = letter;
             if (letter !== " ") {
 
-                var liLetter = document.createElement("li");
-                liLetter.textContent = letter;
+
+              
                 liLetter.setAttribute("class", "hide letter");
-                phraseID.firstElementChild.appendChild(liLetter);
+          
 
 
 
@@ -31,10 +36,9 @@ class Phrase {
             else {
 
 
-                var liSpace = document.createElement("li");
-                liSpace.textContent = letter;
-                liSpace.setAttribute("class", "space");
-                phraseID.firstElementChild.appendChild(liSpace);
+
+                liLetter.setAttribute("class", "space");
+
                 
 
 
