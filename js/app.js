@@ -22,14 +22,14 @@ the gameboard to display the`liveHeart.png` image.
 
     game = new Game();
 
-    if (game.gameOver(game)) {
+    //if (game.gameOver()) {
 
 
  
         var buttons = document.querySelectorAll("button");
         buttons.forEach(button => button.disabled = false);
 
-
+    
         var wrong = document.getElementsByClassName("wrong");
         for (var i = 0; i < wrong.length; i++)
         {
@@ -44,8 +44,21 @@ the gameboard to display the`liveHeart.png` image.
             chosen[i].classList.remove("chosen");
         }
 
-    }
 
+        //removing the li elements by looping through the phrase dom elements, getting the firstElementChild (ul). 
+        //removing the child of it(with the phrase[i])
+        var phraseButtons = document.getElementById("phrase").firstElementChild.childNodes;
+        console.log(phraseButtons);
+        for (var i = 0; i < phraseButtons.length; i++) {
+
+             phraseButtons[i].remove(phraseButtons[i]);
+
+
+        }
+
+
+    //}
+  
 
 
     game.startGame();
@@ -66,16 +79,6 @@ the gameboard to display the`liveHeart.png` image.
  
    
 
-    //removing the li elements by looping through the phrase dom elements, getting the firstElementChild (ul). 
-    //removing the child of it(with the phrase[i])
-    var phraseButtons = document.getElementById("phrase").firstElementChild.childNodes;
-    console.log(phraseButtons);
-    for (var i = 0; i < phraseButtons.length; i++) {
-
-        phraseButtons[i].remove(phraseButtons[i]);
-
-
-    }
 
     var letters = document.getElementById("phrase").firstElementChild.childNodes;
 });
