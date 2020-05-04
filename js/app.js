@@ -55,16 +55,17 @@ the gameboard to display the`liveHeart.png` image.
         var scoreboard = document.querySelectorAll("img");
         scoreboard.forEach((heart) => (heart.src = "images/liveHeart.png"));
 
+        game.startGame();
 
         
 
     }
   
 
-    game.startGame();
-    
 
-  
+
+    game.startGame();
+
 
   
 
