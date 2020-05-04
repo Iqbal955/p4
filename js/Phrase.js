@@ -18,8 +18,15 @@ class Phrase {
 
             var ul = document.createElement("ul");
             var liLetter = document.createElement("li");
+
+
+
+            phraseID.appendChild(ul);
             ul.appendChild(liLetter);
-            phraseID.firstElementChild.appendChild(liLetter);
+
+
+
+
             liLetter.textContent = letter;
             if (letter !== " ") {
 
