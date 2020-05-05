@@ -8,13 +8,13 @@ class Game {
         this.missed = 0;
         this.phrases = [
 
-            new Phrase("Ha ppi ness"),
+            new Phrase("Joyful and Happy"),
 
-            new Phrase("Jo y"),
+            new Phrase("Thank you"),
 
-            new Phrase("High Vibe s"),
+            new Phrase("High Vibes"),
 
-            new Phrase("blEsSings")
+            new Phrase("Happy")
         ];
 
 
@@ -145,6 +145,41 @@ easily accessed throughout the game.
     }
 
 
+    restartGame() {
+
+
+        var buttons = document.querySelectorAll("button");
+        buttons.forEach(button => button.disabled = false);
+
+        var phraseButtons = document.getElementById("phrase").firstElementChild;
+        phraseButtons.remove();
+
+
+
+        var wrong = document.getElementsByClassName("wrong");
+        for (var i = 0; i < wrong.length; i++) {
+            wrong[i].classList.remove("wrong");
+        }
+
+
+
+        var chosen = document.getElementsByClassName("chosen");
+        for (var i = 0; i < chosen.length; i++) {
+            chosen[i].classList.remove("chosen");
+        }
+
+
+        //removing the li elements by looping through the phrase dom elements, getting the firstElementChild (ul). 
+        //removing the child of it(with the phrase[i])
+
+        var scoreboard = document.querySelectorAll("img");
+        scoreboard.forEach((heart) => (heart.src = "images/liveHeart.png"));
+
+
+
+    }
+
+
 
     gameOver(gameWon) {
         // Select 'h1#game-over-message'
@@ -164,6 +199,9 @@ easily accessed throughout the game.
             divOverlay.style.display = 'block';
             divOverlay.setAttribute('class', 'win');
             title.classList.remove('slide-in'); //removes slide animation 
+            document.getElementById("btn__reset").innerHTML = "Try Again?";
+            restartGame();
+
 
         } else {
             gameOver.innerHTML = 'Sorry, better luck next time!';
@@ -172,6 +210,8 @@ easily accessed throughout the game.
             divOverlay.style.display = 'block';
             divOverlay.setAttribute('class', 'lose');
             title.classList.remove('slide-in'); //removes slide animation
+            document.getElementById("btn__reset").innerHTML = "Try Again?";
+            restartGame();
         };
 
  
