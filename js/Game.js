@@ -175,6 +175,8 @@ easily accessed throughout the game.
         var scoreboard = document.querySelectorAll("img");
         scoreboard.forEach((heart) => (heart.src = "images/liveHeart.png"));
 
+        console.log("remove function");
+
 
 
     }
@@ -200,7 +202,10 @@ easily accessed throughout the game.
             divOverlay.setAttribute('class', 'win');
             title.classList.remove('slide-in'); //removes slide animation 
             document.getElementById("btn__reset").innerHTML = "Try Again?";
-            restartGame();
+
+        //    const game = new Game();
+
+            game.restartGame();
 
 
         } else {
@@ -211,7 +216,8 @@ easily accessed throughout the game.
             divOverlay.setAttribute('class', 'lose');
             title.classList.remove('slide-in'); //removes slide animation
             document.getElementById("btn__reset").innerHTML = "Try Again?";
-            restartGame();
+         //   const game = new Game();
+            game.restartGame();
         };
 
  
