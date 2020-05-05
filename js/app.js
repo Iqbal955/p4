@@ -2,30 +2,63 @@
  * Project 4 - OOP Game App
  * app.js */
 
-var game;
+
 
 //Reset button event listener
-const reset = document.getElementById("btn__reset");
-reset.addEventListener("click", e => {
 
 
 
-    /*
-    Remove all`li` elements from the Phrase`ul` element.
-    ● Enable all of the onscreen keyboard buttons and update each to use the`key` CSS class,
-    and not use the`chosen` or`wrong` CSS classes.
-    ● Reset all of the heart images(i.e.the player's lives) in the scoreboard at the bottom of
-the gameboard to display the`liveHeart.png` image.
+
+const game = new Game(); //creates a new game object and sets it to game
 
 
-*/
+function newGame() { //new game function (to be used later)
+    
+    const reset = document.getElementById("btn__reset") //event listener
+    reset.addEventListener("click", e => {
 
-    game = new Game();
 
-    if (game.gameOver) {
+        game.startGame(); //starts game
 
 
- 
+        //sets the scoreboard for each item to live heart.
+        var scoreboard = document.querySelectorAll("img");
+        scoreboard.forEach((heart) => (heart.src = "images/liveHeart.png"));
+
+
+        //Keyboard eventlistener
+        const lettersonKeyboard = document.getElementById("qwerty").addEventListener("click", (e) => {
+
+
+            //Check condition, if clicked event has tag name button, execute handleInteraction()
+            if (event.target.tagName === 'BUTTON') {
+                game.handleInteraction(event.target);
+            };
+
+
+
+        });
+
+
+        if (game.gameOver) { //if game.gameOver is true, the restartGame callback is called.
+
+
+            restartGame()
+
+        };
+
+    });
+
+
+            }
+
+function restartGame() { 
+
+
+    
+
+   //the restart game callback function resets everything, once it has reset all it call the previous function, new Game
+
         var buttons = document.querySelectorAll("button");
         buttons.forEach(button => button.disabled = false);
 
@@ -33,18 +66,16 @@ the gameboard to display the`liveHeart.png` image.
         phraseButtons.remove();
 
 
-    
+
         var wrong = document.getElementsByClassName("wrong");
-        for (var i = 0; i < wrong.length; i++)
-        {
-           wrong[i].classList.remove("wrong");
+        for (var i = 0; i < wrong.length; i++) {
+            wrong[i].classList.remove("wrong");
         }
 
 
 
         var chosen = document.getElementsByClassName("chosen");
-        for (var i = 0; i < chosen.length; i++)
-        {
+        for (var i = 0; i < chosen.length; i++) {
             chosen[i].classList.remove("chosen");
         }
 
@@ -53,62 +84,22 @@ the gameboard to display the`liveHeart.png` image.
         //removing the child of it(with the phrase[i])
 
         var scoreboard = document.querySelectorAll("img");
-        scoreboard.forEach((heart) => (heart.src = "images/liveHeart.png"));
-
-        game.startGame();
-
-        
-
-    }
-  
+    scoreboard.forEach((heart) => (heart.src = "images/liveHeart.png"));
 
 
 
-    game.startGame();
 
-
-  
-
-        //setting the scoreboard to the regular heart back again
-
-
-    //removing the li elements by looping through the phrase dom elements, getting the firstElementChild (ul). 
-    //removing the child of it(with the phrase[i])
-    //setting the scoreboard to the regular heart back again
-
-
- 
-    var scoreboard = document.querySelectorAll("img");
-    scoreboard.forEach((heart) => (heart.src = "images/liveHeart.png")); 
-
-
-    var letters = document.getElementById("phrase").firstElementChild.childNodes;
-});
-
-    //Keyboard eventlistener
-    const lettersonKeyboard = document.getElementById("qwerty").addEventListener("click", (e) => {
-
-
-        //Check condition, if clicked event has tag name button, execute handleInteraction()
-        if (event.target.tagName === 'BUTTON') {
-            game.handleInteraction(event.target);
-        };
-
-
-
-    });
-    /*
-    Remove all`li` elements from the Phrase`ul` element.
-    ● Enable all of the onscreen keyboard buttons and update each to use the`key` CSS class,
-    and not use the`chosen` or`wrong` CSS classes.
-    ● Reset all of the heart images(i.e.the player's lives) in the scoreboard at the bottom of
-    the gameboard to display the`liveHeart.png` image.
-    
-    
-    */
+        newGame();
 
 
 
 
 
 
+
+    };
+
+
+newGame() //the newGame function is being called intially
+
+    //}
