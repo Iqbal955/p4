@@ -14,9 +14,9 @@ class Phrase {
 
         const phraseID = document.getElementById("phrase");
         var splitPhrase = this.actualPhrase.split("");
+        var ul = document.createElement("ul");
         splitPhrase.forEach(letter => {
-
-            var ul = document.createElement("ul");
+            
             var liLetter = document.createElement("li");
 
 
@@ -30,25 +30,12 @@ class Phrase {
             liLetter.textContent = letter;
             if (letter !== " ") {
 
-
-              
                 liLetter.setAttribute("class", "hide letter");
-          
-
-
-
             }
-
 
             else {
 
-
-
                 liLetter.setAttribute("class", "space");
-
-                
-
-
 
             }
 
